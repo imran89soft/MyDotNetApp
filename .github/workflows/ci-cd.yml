@@ -33,6 +33,6 @@ jobs:
 
       - name: Test application
         run: dotnet test --configuration Release --no-build
-
+        
       - name: Build container image
-        run: docker build -t $IMAGE_NAME:${{ github.sha }} .
+  run: docker build -t $IMAGE_NAME .
