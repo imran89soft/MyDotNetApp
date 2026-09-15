@@ -34,4 +34,3 @@ jobs:
       - name: Build container image
         run: |
           podman build -t mydotnetapp:${{ github.sha }} .
-
