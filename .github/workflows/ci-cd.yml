@@ -30,3 +30,8 @@ jobs:
 
       - name: Test application
         run: dotnet test --configuration Release --no-build
+
+      - name: Build container image
+        run: |
+          podman build -t mydotnetapp:${{ github.sha }} .
+
