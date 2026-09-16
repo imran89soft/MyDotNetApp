@@ -3,7 +3,7 @@ name: Build and Push Container
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: read
@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout source code
         uses: actions/checkout@v4
 
@@ -29,6 +28,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
+      # Remove this step if your repository has no test project
       - name: Test
         run: dotnet test --configuration Release --no-build
 
